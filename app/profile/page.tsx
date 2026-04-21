@@ -206,7 +206,7 @@ export default function ProfilePage() {
             </div>
             <div>
               <label htmlFor="handedness" className="mb-1 block text-sm font-medium text-slate-700">
-                Handedness
+                Left or right hand?
               </label>
               <select
                 id="handedness"
