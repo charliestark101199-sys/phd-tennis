@@ -53,6 +53,15 @@ export default function ProfilePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
+  const [shareableLink, setShareableLink] = useState("");
+  const [copyStatus, setCopyStatus] = useState("");
+
+  const buildShareableLink = (slug: string) => {
+    if (typeof window === "undefined") {
+      return "";
+    }
+    return `${window.location.origin}/recruit/${slug}`;
+  };
 
   useEffect(() => {
     const loadProfile = async () => {
@@ -68,6 +77,9 @@ export default function ProfilePage() {
             ...prev,
             ...result.profile,
           }));
+          if (result.profile.clerk_user_id) {
+            setShareableLink(buildShareableLink(result.profile.clerk_user_id));
+          }
         }
       } catch {
         setStatusMessage("Could not load saved profile data.");
@@ -103,6 +115,10 @@ export default function ProfilePage() {
         throw new Error("Failed to save profile.");
       }
 
+      const result = await response.json();
+      if (result.profile?.clerk_user_id) {
+        setShareableLink(buildShareableLink(result.profile.clerk_user_id));
+      }
       setStatusMessage("Profile saved successfully.");
     } catch {
       setStatusMessage("Failed to save profile. Please try again.");
@@ -119,6 +135,40 @@ export default function ProfilePage() {
           Complete your profile so coaches can quickly evaluate your fit.
         </p>
       </section>
+
+      {shareableLink ? (
+        <section className="rounded-xl border border-blue-200 bg-blue-50 p-6 shadow-sm">
+          <h2 className="text-lg font-semibold text-blue-900">Your shareable coach link</h2>
+          <p className="mt-2 text-sm text-blue-800">
+            Coaches can view your public profile here once you share this link.
+          </p>
+          <div className="mt-4 flex flex-col gap-3 md:flex-row md:items-center">
+            <a
+              href={shareableLink}
+              target="_blank"
+              rel="noreferrer"
+              className="truncate text-sm font-medium text-blue-700 underline decoration-blue-300 underline-offset-4 hover:text-blue-900"
+            >
+              {shareableLink}
+            </a>
+            <button
+              type="button"
+              onClick={async () => {
+                try {
+                  await navigator.clipboard.writeText(shareableLink);
+                  setCopyStatus("Link copied.");
+                } catch {
+                  setCopyStatus("Could not copy link.");
+                }
+              }}
+              className="inline-flex w-fit rounded-lg border border-blue-200 bg-white px-4 py-2 text-sm font-semibold text-blue-700 hover:bg-blue-100"
+            >
+              Copy link
+            </button>
+          </div>
+          {copyStatus ? <p className="mt-2 text-xs font-medium text-blue-800">{copyStatus}</p> : null}
+        </section>
+      ) : null}
 
       <form className="space-y-6">
         <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
