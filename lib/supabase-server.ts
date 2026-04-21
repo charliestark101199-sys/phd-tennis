@@ -10,5 +10,5 @@ if (!supabaseUrl || !supabaseServiceRoleKey) {
 }
 
 export function createSupabaseServerClient() {
-  return createClient(supabaseUrl, supabaseServiceRoleKey);
+  return createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
 }
