@@ -150,7 +150,9 @@ export default function HomePage() {
             },
           ].map((testimonial) => (
             <figure key={testimonial.author} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <blockquote className="text-base leading-relaxed text-slate-700">"{testimonial.quote}"</blockquote>
+              <blockquote className="text-base leading-relaxed text-slate-700">
+                &quot;{testimonial.quote}&quot;
+              </blockquote>
               <figcaption className="mt-4 text-sm font-semibold text-slate-900">{testimonial.author}</figcaption>
             </figure>
           ))}
