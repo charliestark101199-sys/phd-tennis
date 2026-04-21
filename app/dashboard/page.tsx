@@ -1,4 +1,5 @@
 import { currentUser } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
 const metricCards = [
   { label: "Profile completeness", value: "72%" },
@@ -38,6 +39,12 @@ const upcomingSessions = [
 
 export default async function DashboardPage() {
   const user = await currentUser();
+  const role = user?.publicMetadata?.role;
+
+  if (role !== "recruit") {
+    redirect("/");
+  }
+
   const firstName = user?.firstName?.trim() || "Recruit";
 
   return (
