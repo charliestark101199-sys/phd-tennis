@@ -19,7 +19,7 @@ export default function HomePage() {
             Resources
           </a>
           <a
-            href="#get-started"
+            href="/sign-up"
             className="rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
           >
             Get started
@@ -41,7 +41,7 @@ export default function HomePage() {
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
             <a
-              href="#get-started"
+              href="/sign-up"
               className="rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
             >
               Create your profile
