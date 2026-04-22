@@ -3,7 +3,7 @@ import { useUser } from "@clerk/nextjs";
 
 export default function HomePage() {
   const { isSignedIn } = useUser();
-  const ctaHref = isSignedIn ? "/dashboard" : "/sign-up";
+  const ctaHref = "/dashboard";
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
