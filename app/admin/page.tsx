@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { auth } from "@clerk/nextjs/server";
+import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 
@@ -88,9 +88,9 @@ function displayText(value: string | null | undefined) {
 }
 
 export default async function AdminPage({ searchParams }: AdminPageProps) {
-  const { sessionClaims } = await auth();
+  const user = await currentUser();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const role = (sessionClaims as any)?.publicMetadata?.role as string | undefined;
+  const role = user?.publicMetadata?.role as string | undefined;
 
   if (role !== "admin") {
     redirect("/");
