@@ -1,4 +1,10 @@
+"use client";
+import { useUser } from "@clerk/nextjs";
+
 export default function HomePage() {
+  const { isSignedIn } = useUser();
+  const ctaHref = isSignedIn ? "/dashboard" : "/sign-up";
+
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
@@ -18,8 +24,8 @@ export default function HomePage() {
           <a href="#resources" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">
             Resources
           </a>
-          <a
-            href="/sign-up"
+          
+            href={ctaHref}
             className="rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
           >
             Get started
@@ -40,13 +46,13 @@ export default function HomePage() {
             coaches, and confidently navigate every step of the college tennis recruiting journey.
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
-            <a
-              href="/sign-up"
+            
+              href={ctaHref}
               className="rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
             >
               Create your profile
             </a>
-            <a
+            
               href="#how-it-works"
               className="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:text-slate-900"
             >
@@ -167,8 +173,8 @@ export default function HomePage() {
               Build your profile today and get expert guidance to reach the schools where you can thrive.
             </p>
           </div>
-          <a
-            href="#"
+          
+            href={ctaHref}
             className="rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
           >
             Get started now
