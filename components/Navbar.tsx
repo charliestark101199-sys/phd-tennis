@@ -1,5 +1,7 @@
+'use client';
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 
 const links = [
   { label: "Home", href: "/" },
@@ -11,6 +13,9 @@ const links = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  if (pathname === "/") return null;
+
   return (
     <header className="border-b border-slate-200 bg-white">
       <nav className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-4">
