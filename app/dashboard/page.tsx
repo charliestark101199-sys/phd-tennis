@@ -41,7 +41,7 @@ export default async function DashboardPage() {
   const user = await currentUser();
   const role = user?.publicMetadata?.role;
 
-  if (role !== "recruit") {
+  if (role !== "recruit" && role !== "admin") {
     redirect("/");
   }
 
