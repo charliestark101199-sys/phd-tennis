@@ -42,14 +42,14 @@ export default function HomePage() {
         </div>
       </section>
 
-     <section id="placements" className="border-y border-slate-200 bg-white">
+   <section id="placements" className="border-y border-slate-200 bg-white">
   <div className="mx-auto w-full max-w-7xl px-6 py-10 lg:px-10">
     <p className="mb-8 text-center text-sm font-medium text-slate-500">Proud to have placed players at</p>
     <div className="flex flex-wrap items-center justify-center gap-12">
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Gonzaga_Bulldogs_logo.svg/200px-Gonzaga_Bulldogs_logo.svg.png" alt="Gonzaga University" className="h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 transition" />
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Seattle_University_Redhawks_logo.svg/200px-Seattle_University_Redhawks_logo.svg.png" alt="Seattle University" className="h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 transition" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Pomona_College_seal.svg/200px-Pomona_College_seal.svg.png" alt="Pomona College" className="h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 transition" />
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Middlebury_Panthers_logo.svg/200px-Middlebury_Panthers_logo.svg.png" alt="Middlebury College" className="h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 transition" />
+      <span className="text-xl font-bold text-slate-400 hover:text-slate-700 transition">Gonzaga</span>
+      <span className="text-xl font-bold text-slate-400 hover:text-slate-700 transition">Seattle University</span>
+      <span className="text-xl font-bold text-slate-400 hover:text-slate-700 transition">Pomona College</span>
+      <span className="text-xl font-bold text-slate-400 hover:text-slate-700 transition">Middlebury</span>
     </div>
   </div>
 </section>
