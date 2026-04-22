@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { currentUser } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 
@@ -88,8 +88,8 @@ function displayText(value: string | null | undefined) {
 }
 
 export default async function AdminPage({ searchParams }: AdminPageProps) {
-  const user = await currentUser();
-  const role = user?.publicMetadata?.role;
+  const { sessionClaims } = await auth();
+  const role = sessionClaims?.metadata?.role;
 
   if (role !== "admin") {
     redirect("/");
