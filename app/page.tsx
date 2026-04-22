@@ -2,7 +2,6 @@
 import { useUser } from "@clerk/nextjs";
 
 export default function HomePage() {
-  const { isSignedIn } = useUser();
   const ctaHref = "/dashboard";
 
   return (
