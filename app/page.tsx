@@ -42,14 +42,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="placements" className="border-y border-slate-200 bg-white">
-        <div className="mx-auto grid w-full max-w-7xl gap-6 px-6 py-10 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
-          <div><p className="text-3xl font-bold text-slate-900">200+</p><p className="mt-2 text-sm font-medium text-slate-600">Players placed</p></div>
-          <div><p className="text-3xl font-bold text-slate-900">98%</p><p className="mt-2 text-sm font-medium text-slate-600">Placement rate</p></div>
-          <div><p className="text-3xl font-bold text-slate-900">150+</p><p className="mt-2 text-sm font-medium text-slate-600">College programs</p></div>
-          <div><p className="text-3xl font-bold text-slate-900">20+</p><p className="mt-2 text-sm font-medium text-slate-600">Years experience</p></div>
-        </div>
-      </section>
+     <section id="placements" className="border-y border-slate-200 bg-white">
+  <div className="mx-auto w-full max-w-7xl px-6 py-10 lg:px-10">
+    <p className="mb-8 text-center text-sm font-medium text-slate-500">Proud to have placed players at</p>
+    <div className="flex flex-wrap items-center justify-center gap-12">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Gonzaga_Bulldogs_logo.svg/200px-Gonzaga_Bulldogs_logo.svg.png" alt="Gonzaga University" className="h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 transition" />
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Seattle_University_Redhawks_logo.svg/200px-Seattle_University_Redhawks_logo.svg.png" alt="Seattle University" className="h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 transition" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Pomona_College_seal.svg/200px-Pomona_College_seal.svg.png" alt="Pomona College" className="h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 transition" />
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Middlebury_Panthers_logo.svg/200px-Middlebury_Panthers_logo.svg.png" alt="Middlebury College" className="h-12 w-auto object-contain grayscale opacity-70 hover:opacity-100 transition" />
+    </div>
+  </div>
+</section>
 
       <section id="services" className="mx-auto w-full max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
         <div className="mb-10 max-w-2xl">
