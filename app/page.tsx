@@ -1,4 +1,5 @@
 'use client';
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 export default function HomePage() {
   const ctaHref = "/profile";
@@ -14,9 +15,14 @@ export default function HomePage() {
           <a href="#services" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">Services</a>
           <a href="#placements" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">Placements</a>
           <a href="#resources" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">Resources</a>
-          <a href={ctaHref} className="rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700">
-            Get started
-          </a>
+          <SignedOut>
+            <a href="/sign-in" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">Sign in</a>
+            <a href={ctaHref} className="rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700">Get started</a>
+          </SignedOut>
+          <SignedIn>
+            <a href="/dashboard" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">Dashboard</a>
+            <UserButton />
+          </SignedIn>
         </div>
       </nav>
 
@@ -42,17 +48,17 @@ export default function HomePage() {
         </div>
       </section>
 
-   <section id="placements" className="border-y border-slate-200 bg-white">
-  <div className="mx-auto w-full max-w-7xl px-6 py-10 lg:px-10">
-    <p className="mb-8 text-center text-sm font-medium text-slate-500">Proud to have placed players at</p>
-    <div className="flex flex-wrap items-center justify-center gap-12">
-      <span className="text-xl font-bold text-slate-400 hover:text-slate-700 transition">Gonzaga</span>
-      <span className="text-xl font-bold text-slate-400 hover:text-slate-700 transition">Seattle University</span>
-      <span className="text-xl font-bold text-slate-400 hover:text-slate-700 transition">Pomona College</span>
-      <span className="text-xl font-bold text-slate-400 hover:text-slate-700 transition">Middlebury</span>
-    </div>
-  </div>
-</section>
+      <section id="placements" className="border-y border-slate-200 bg-white">
+        <div className="mx-auto w-full max-w-7xl px-6 py-10 lg:px-10">
+          <p className="mb-8 text-center text-sm font-medium text-slate-500">Proud to have placed players at</p>
+          <div className="flex flex-wrap items-center justify-center gap-12">
+            <span className="text-xl font-bold text-slate-400 hover:text-slate-700 transition">Gonzaga</span>
+            <span className="text-xl font-bold text-slate-400 hover:text-slate-700 transition">Seattle University</span>
+            <span className="text-xl font-bold text-slate-400 hover:text-slate-700 transition">Pomona College</span>
+            <span className="text-xl font-bold text-slate-400 hover:text-slate-700 transition">Middlebury</span>
+          </div>
+        </div>
+      </section>
 
       <section id="services" className="mx-auto w-full max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
         <div className="mb-10 max-w-2xl">
