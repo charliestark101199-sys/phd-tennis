@@ -89,7 +89,7 @@ function displayText(value: string | null | undefined) {
 
 export default async function AdminPage({ searchParams }: AdminPageProps) {
   const { sessionClaims } = await auth();
-  const role = sessionClaims?.["public_metadata"]?.["role"] as string | undefined;
+  const role = (sessionClaims as any)?.public_metadata?.role as string | undefined;
 
   if (role !== "admin") {
     redirect("/");
