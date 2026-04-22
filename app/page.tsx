@@ -1,7 +1,8 @@
 'use client';
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { useUser, UserButton } from "@clerk/nextjs";
 
 export default function HomePage() {
+  const { isSignedIn } = useUser();
   const ctaHref = "/profile";
 
   return (
@@ -15,14 +16,17 @@ export default function HomePage() {
           <a href="#services" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">Services</a>
           <a href="#placements" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">Placements</a>
           <a href="#resources" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">Resources</a>
-          <SignedOut>
-            <a href="/sign-in" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">Sign in</a>
-            <a href={ctaHref} className="rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700">Get started</a>
-          </SignedOut>
-          <SignedIn>
-            <a href="/dashboard" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">Dashboard</a>
-            <UserButton />
-          </SignedIn>
+          {isSignedIn ? (
+            <>
+              <a href="/dashboard" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">Dashboard</a>
+              <UserButton />
+            </>
+          ) : (
+            <>
+              <a href="/sign-in" className="text-sm font-medium text-slate-700 transition hover:text-slate-900">Sign in</a>
+              <a href={ctaHref} className="rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700">Get started</a>
+            </>
+          )}
         </div>
       </nav>
 
