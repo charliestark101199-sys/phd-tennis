@@ -69,14 +69,32 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold tracking-tight text-slate-900">Services built for serious recruits</h2>
           <p className="mt-3 text-slate-600">Everything you need to stand out, stay organized, and move through recruiting with confidence.</p>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {["Recruit profile","1-on-1 coaching","AI assistant","Resources hub","Coach outreach","School selection"].map((service) => (
-            <article key={service} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-semibold text-slate-900">{service}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">Create a comprehensive recruiting profile to send to college coaches</p>
-            </article>
-          ))}
-        </div>
+       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+  <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h3 className="text-lg font-semibold text-slate-900">Recruit profile</h3>
+    <p className="mt-3 text-sm leading-relaxed text-slate-600">Create a comprehensive recruiting profile to send to college coaches.</p>
+  </article>
+  <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h3 className="text-lg font-semibold text-slate-900">1-on-1 coaching</h3>
+    <p className="mt-3 text-sm leading-relaxed text-slate-600">Work with a former Division 1 coach to help you navigate the recruiting process from start to finish.</p>
+  </article>
+  <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h3 className="text-lg font-semibold text-slate-900">AI assistant</h3>
+    <p className="mt-3 text-sm leading-relaxed text-slate-600">Personalized guidance and practical tools to help you take clear, strategic next steps.</p>
+  </article>
+  <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h3 className="text-lg font-semibold text-slate-900">Resources hub</h3>
+    <p className="mt-3 text-sm leading-relaxed text-slate-600">Personalized guidance and practical tools to help you take clear, strategic next steps.</p>
+  </article>
+  <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h3 className="text-lg font-semibold text-slate-900">Coach outreach</h3>
+    <p className="mt-3 text-sm leading-relaxed text-slate-600">Personalized guidance and practical tools to help you take clear, strategic next steps.</p>
+  </article>
+  <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h3 className="text-lg font-semibold text-slate-900">School selection</h3>
+    <p className="mt-3 text-sm leading-relaxed text-slate-600">Personalized guidance and practical tools to help you take clear, strategic next steps.</p>
+  </article>
+</div>
       </section>
 
       <section id="how-it-works" className="bg-slate-900 py-16 text-white lg:py-20">
