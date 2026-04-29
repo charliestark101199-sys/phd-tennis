@@ -73,7 +73,7 @@ export default function HomePage() {
           {["Recruit profile","1-on-1 coaching","AI assistant","Resources hub","Coach outreach","School selection"].map((service) => (
             <article key={service} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="text-lg font-semibold text-slate-900">{service}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">Personalized guidance and practical tools to help you take clear, strategic next steps.</p>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">Create a comprehensive recruiting profile to send to college coaches</p>
             </article>
           ))}
         </div>
