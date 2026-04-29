@@ -83,7 +83,7 @@ export default function HomePage() {
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
           <h2 className="text-3xl font-bold tracking-tight">How it works</h2>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {["Build your profile","Work with Pat 1-on-1","Get offers and choose your school"].map((step, index) => (
+            {["Build your profile","Work with a college coach 1-on-1","Get offers and choose your school"].map((step, index) => (
               <article key={step} className="rounded-2xl border border-slate-700 bg-slate-800 p-6">
                 <p className="text-sm font-semibold text-blue-300">Step {index + 1}</p>
                 <h3 className="mt-3 text-xl font-semibold">{step}</h3>
